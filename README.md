@@ -1,5 +1,5 @@
-# java_rps
+# Old School RPG Game
 
-ROCK, PAPER, SCISSORS GO!
+A game made purely in vanilla java for learning purposes.
 
-A game made in java to learn classes and GUI.
+You can use the files and assets in anyway you want
