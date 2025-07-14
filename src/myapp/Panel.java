@@ -2,6 +2,9 @@ package myapp;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+
 import javax.swing.JPanel;
 
 public class Panel extends JPanel implements Runnable {
@@ -27,9 +30,25 @@ public class Panel extends JPanel implements Runnable {
 		gameThread = new Thread(this);
 	}
 	
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		Graphics2D g2 = (Graphics2D)g;
+		g2.setColor(Color.white);
+		g2.fillRect(100, 100, scaledTiles, scaledTiles);
+		g2.dispose();
+	}
+	
+	public void update() {
+		
+	}
+	
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
+		while(gameThread != null) {
+			update();
+			repaint();
+			
+		}
 		
 	}
 }
